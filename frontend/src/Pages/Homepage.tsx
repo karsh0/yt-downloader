@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import axios from "axios";
+import { BACKEND_URL } from "./config";
 
 export default function Homepage() {
   const [url, setUrl] = useState("");
@@ -16,7 +17,7 @@ export default function Homepage() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/download", { url: trimmedUrl });
+      const res = await axios.post(`${BACKEND_URL}/download`, { url: trimmedUrl });
       window.location.href = res.data.url;
     } catch (error) {
       console.error("Download failed:", error);
