@@ -19,7 +19,6 @@ app.get('/', (req,res)=>{
 
 app.post('/download', async(req,res)=>{
     const {url} = req.body;
-    console.log(url)
    try{
         const output = await youtubedl(url, { 
             dumpSingleJson: true,

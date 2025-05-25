@@ -13,7 +13,6 @@ export default function Homepage() {
       alert("Please enter a YouTube URL.");
       return;
     }
-    console.log(trimmedUrl);
 
     try {
       setLoading(true);
